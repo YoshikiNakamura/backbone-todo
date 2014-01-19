@@ -1,5 +1,9 @@
 (function(){
 
+/**
+ * 02〜04:モデルの練習
+ */
+/*
 	//モデル
 	var Task = Backbone.Model.extend({
 		defaults: {
@@ -32,4 +36,26 @@
 
 	task1.set({title: ''}, {validate: true});
 	console.log(task1.toJSON());
+*/
+
+/**
+ *
+ */
+	//モデル
+	var Task = Backbone.Model.extend({
+		defaults: {
+			title: 'do something',
+			completed: false
+		}
+	});
+
+	var task = new Task();
+
+	//ビュー
+	var TaskView = Backbone.View.extend({
+		tagName: 'li'
+	});
+	var taskView = new TaskView({model:task});
+
+	console.log(taskView.el);
 })();
